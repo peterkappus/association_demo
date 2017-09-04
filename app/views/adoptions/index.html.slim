@@ -1,0 +1,35 @@
+.page-header
+  = link_to new_adoption_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Adoption
+  h1
+    | Listing adoptions
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Cat
+        th
+          | Owner
+        th
+          | Notes
+        th
+        th
+        th
+    tbody
+      - @adoptions.each do | adoption |
+        tr
+          td
+            = adoption.cat.name
+          td
+            = adoption.owner.name
+          td
+            = adoption.notes
+          td
+            = link_to 'Show', adoption
+          td
+            = link_to 'Edit', edit_adoption_path(adoption) 
+          td
+            = link_to 'Destroy', adoption, method: :delete, data: { confirm: 'Are you sure?' } 

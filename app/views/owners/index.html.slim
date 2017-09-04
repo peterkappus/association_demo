@@ -1,0 +1,27 @@
+.page-header
+  = link_to new_owner_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Owner
+  h1
+    | Listing owners
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Name
+        th
+        th
+        th
+    tbody
+      - @owners.each do | owner |
+        tr
+          td
+            = owner.name
+          td
+            = link_to 'Show', owner
+          td
+            = link_to 'Edit', edit_owner_path(owner) 
+          td
+            = link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } 

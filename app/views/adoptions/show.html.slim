@@ -1,0 +1,22 @@
+.page-header
+  = link_to adoptions_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_adoption_path(@adoption), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show adoption
+dl.dl-horizontal
+  dt
+    | Cat:
+  dd
+    = @adoption.cat
+  dt
+    | Owner:
+  dd
+    = @adoption.owner
+  dt
+    | Notes:
+  dd
+    = @adoption.notes
