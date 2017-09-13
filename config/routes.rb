@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   resources :adoptions
   resources :owners
   resources :posts

@@ -1,0 +1,22 @@
+.page-header
+  = link_to friendships_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_friendship_path(@friendship), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show friendship
+dl.dl-horizontal
+  dt
+    | Src cat:
+  dd
+    = @friendship.src_cat_id
+  dt
+    | Dest cat:
+  dd
+    = @friendship.dest_cat_id
+  dt
+    | Notes:
+  dd
+    = @friendship.notes

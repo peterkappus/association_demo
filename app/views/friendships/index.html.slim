@@ -1,0 +1,35 @@
+.page-header
+  = link_to new_friendship_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Friendship
+  h1
+    | Listing friendships
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Src cat
+        th
+          | Dest cat
+        th
+          | Notes
+        th
+        th
+        th
+    tbody
+      - @friendships.each do | friendship |
+        tr
+          td
+            = friendship.src_cat_id
+          td
+            = friendship.dest_cat_id
+          td
+            = friendship.notes
+          td
+            = link_to 'Show', friendship
+          td
+            = link_to 'Edit', edit_friendship_path(friendship) 
+          td
+            = link_to 'Destroy', friendship, method: :delete, data: { confirm: 'Are you sure?' } 

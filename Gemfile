@@ -26,7 +26,8 @@ gem 'html2slim'
 
 #gem 'bootstrap'
 #gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
-gem 'bootstrap-generators'
+#gem 'bootstrap-generators'
+gem 'bootstrap-generators', '~> 3.3.4'
 
 gem 'jquery-rails'
 
